@@ -21,7 +21,7 @@
 
 4. Update Windows Open SSH
 
-Window now come with [OpenSSH](https://github.com/PowerShell/openssh-portable). But the default version seem a bit buggy. If you are using git with ssh and add a ssh key with password, every git pull/push/fetch command you are required to enter password again (not sure if it is my fault or not, but after update open ssh, everything ork fine). Update guide: <https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH>
+   Window now come with [OpenSSH](https://github.com/PowerShell/openssh-portable). But the default version seem a bit buggy. If you are using git with ssh and add a ssh key with password, every git pull/push/fetch command you are required to enter password again (not sure if it is my fault or not, but after update open ssh, everything ork fine). Update guide: <https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH>
 
 5. Setup your powershell profile with [this](resources/Microsoft.PowerShell_profile.ps1)
 
