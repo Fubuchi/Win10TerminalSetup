@@ -1,4 +1,4 @@
-# Set up a your dev enviroment on Windows 10 (Powershell + Window terminal + Scoop)
+Set up a your dev enviroment on Windows 10 (Powershell + Window terminal + Scoop)
 
 ![](resources/ScreenShot.png)
 
@@ -22,9 +22,16 @@
    - Install : <https://github.com/lukesampson/scoop>
    - Use scoop to install other developer tool. Eg: [sudo (very useful imo)](http://blog.lukesampson.com/sudo-for-windows), git, java,...
 
-4. Update Windows Open SSH
+4. Windows Open SSH
 
-   Window now come with [OpenSSH](https://github.com/PowerShell/openssh-portable). But the default version seem a bit buggy. If you are using git with ssh and add a ssh key with password, every git pull/push/fetch command you are required to enter password again (not sure if it is my fault or not, but after update open ssh, everything ork fine). Update guide: <https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH>
+   Add these line to your power shell profile:
+   ```
+   [System.Environment]::SetEnvironmentVariable("GIT_SSH", (scoop which ssh))
+   [System.Environment]::SetEnvironmentVariable("SSH_AUTH_SOCK", $null)
+   [System.Environment]::SetEnvironmentVariable("SSH_AGENT_PID", $null)
+   ```
+
+   **Note**: current openSSH shipped with windows is a bit buggy if you [generate a rsa key](https://github.com/PowerShell/Win32-OpenSSH/issues/1263). The fix will be relaesed in Fall 2020 update, the easiest workaround at the moment is use another non-rsa type when generating key
 
 5. Setup your powershell profile with [this](resources/Microsoft.PowerShell_profile.ps1)
 
